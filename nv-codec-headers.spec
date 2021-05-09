@@ -5,9 +5,9 @@
 %define keepstatic 1
 Name     : nv-codec-headers
 Version  : 10.0.26.1
-Release  : 13
-URL      : file:///insilications/build/clearlinux/packages/nv-codec-headers/nv-codec-headers-10.0.26.1.tar.gz
-Source0  : file:///insilications/build/clearlinux/packages/nv-codec-headers/nv-codec-headers-10.0.26.1.tar.gz
+Release  : 14
+URL      : file:///aot/build/clearlinux/packages/nv-codec-headers/nv-codec-headers-10.0.26.1.tar.gz
+Source0  : file:///aot/build/clearlinux/packages/nv-codec-headers/nv-codec-headers-10.0.26.1.tar.gz
 Summary  : FFmpeg version of Nvidia Codec SDK headers
 Group    : Development/Tools
 License  : GPL-2.0
@@ -23,7 +23,7 @@ BuildRequires : pkg-config-dev
 
 %description
 FFmpeg version of headers required to interface with Nvidias codec APIs.
-Corresponds to Video Codec SDK version 10.0.26.
+Corresponds to Video Codec SDK version 11.0.10.
 
 %package dev
 Summary: dev components for the nv-codec-headers package.
@@ -45,21 +45,21 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1601543028
+export SOURCE_DATE_EPOCH=1620553889
 unset LD_AS_NEEDED
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=16 "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=16 "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=16 "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=16 "
 make  %{?_smp_mflags}  V=1 VERBOSE=1
 
 
 %install
-export SOURCE_DATE_EPOCH=1601543028
+export SOURCE_DATE_EPOCH=1620553889
 rm -rf %{buildroot}
 ## install_macro start
 make install V=1 VERBOSE=1 DESTDIR=%{buildroot} LIBDIR=lib64
