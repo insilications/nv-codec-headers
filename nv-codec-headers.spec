@@ -4,10 +4,10 @@
 #
 %define keepstatic 1
 Name     : nv-codec-headers
-Version  : 10.0.26.1
+Version  : 21.05.09
 Release  : 14
-URL      : file:///aot/build/clearlinux/packages/nv-codec-headers/nv-codec-headers-10.0.26.1.tar.gz
-Source0  : file:///aot/build/clearlinux/packages/nv-codec-headers/nv-codec-headers-10.0.26.1.tar.gz
+URL      : file:///aot/build/clearlinux/packages/nv-codec-headers/nv-codec-headers-v21.05.09.tar.gz
+Source0  : file:///aot/build/clearlinux/packages/nv-codec-headers/nv-codec-headers-v21.05.09.tar.gz
 Summary  : FFmpeg version of Nvidia Codec SDK headers
 Group    : Development/Tools
 License  : GPL-2.0
@@ -45,7 +45,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1620553889
+export SOURCE_DATE_EPOCH=1622554664
 unset LD_AS_NEEDED
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
@@ -55,11 +55,11 @@ export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=16 "
 export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=16 "
 export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=16 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=16 "
-make  %{?_smp_mflags}  V=1 VERBOSE=1
+make  %{?_smp_mflags}  V=1 VERBOSE=1  V=1 VERBOSE=1
 
 
 %install
-export SOURCE_DATE_EPOCH=1620553889
+export SOURCE_DATE_EPOCH=1622554664
 rm -rf %{buildroot}
 ## install_macro start
 make install V=1 VERBOSE=1 DESTDIR=%{buildroot} LIBDIR=lib64
